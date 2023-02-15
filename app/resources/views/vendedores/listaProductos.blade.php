@@ -44,6 +44,8 @@
 
 <!-- Navbar End -->
 
+
+
 <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">{{$vendedor[0]['nombre']}}</span></h2>
@@ -64,7 +66,7 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between bg-light border">
                                 <label ><i class="fas fa-eye text-primary mr-1"></i>Detalle</label>
-                                <h6>{{ $prd->descripcion}}</h6><h6 class="text-muted ml-2"></h6>
+                                <h6>{{$prd->descripcion}}</h6><h6 class="text-muted ml-2"></h6>
                             </div>
                         </div>
                     </div>
@@ -73,6 +75,13 @@
         </div>
     </div>
 
-    
- </script>
+    <div>
+        <p><a href="route{{productos.user}}"> Exportar datos 
+            FORMATO EXCEL
+        </a>
+
+        </p>
+
+    </div>
+
 @endsection

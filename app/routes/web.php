@@ -42,6 +42,6 @@ Route::post("/logout", [SessionsController::class, 'logout']);
 Route::get("/recovery", [SessionsController::class, 'recovery'])->name ('recovery.index');
 Route::post("/recovery", [SessionsController::class, 'recoverypost'])->name ('recovery.guardar');
 
-
+Route::get('/productos/{nombre}/exportar', [ProductosController::class, 'exportar'])->name('exportar'); 
 //Route::get("/{id}", [HomeController::class, 'index']);  
 //Route::post("/login/ingresar", [SessionsController::class, 'ingresar'])->name ('login.ingresar');
