@@ -37,7 +37,7 @@ Route::post("/register", [RegisterController::class, 'store'])->name ('register.
 Route::get("/login", [SessionsController::class, 'create'])->name ('login.index')->middleware('guest');
 Route::post("/login", [SessionsController::class, 'store'])->name ('login.store');
 
-//Route::post("/logout", [SessionsController::class, 'destroy'])->name ('logout.destroy');
+Route::post("/logout", [SessionsController::class, 'logout']);
 
 Route::get("/recovery", [SessionsController::class, 'recovery'])->name ('recovery.index');
 Route::post("/recovery", [SessionsController::class, 'recoverypost'])->name ('recovery.guardar');

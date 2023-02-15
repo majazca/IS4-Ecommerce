@@ -135,7 +135,7 @@
 
       <div class="btn-group">
 
-        <button type="button" class="btn btn-sm btn-outline-secondary">Detalles</button>
+        <!-- //<button type="button" class="btn btn-sm btn-outline-secondary">Detalles</button> -->
 
         <button id="al_carro" type="submit" class="btn btn-sm btn-outline-secondary"  onclick=" envia_carrito($('#ref<?php echo $prd->id_producto; ?>').val(),$('#titulo<?php echo $prd->id_producto; ?>').val(),$('#precio<?php echo $prd->id_producto; ?>').val(),$('#cantidad<?php echo $prd->id_producto; ?>').val());
 
@@ -144,7 +144,7 @@
         ">Añadir al carrito</button>
 
         <input name="ref" type="hidden" id="ref<?php echo $prd->id_producto; ?>" value="<?php echo $prd->id_producto; ?>" />                          
-
+        
         <input name="precio" type="hidden" id="precio<?php echo $prd->id_producto; ?>" value="<?php echo $prd->precio; ?>" />
 
         <input name="titulo" type="hidden" id="titulo<?php echo $prd->id_producto; ?>" value="<?php echo $prd->nombre; ?>" />
@@ -153,7 +153,7 @@
 
       </div>
 
-      <small class="text-muted"><?php echo $prd->precio; ?>€</small>
+      <small class="text-muted"><?php echo $prd->precio; ?>Gs</small>
 
     </div>
 
