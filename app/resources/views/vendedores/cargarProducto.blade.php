@@ -22,7 +22,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Inicio</a>
-                        <a href="shop.html" class="nav-item nav-link">Cargar Productos</a>
+                        <a href="{{route('cargarProducto')}}" class="nav-item nav-link">Cargar Productos</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de ventas</a>
                         <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
@@ -43,7 +43,8 @@
 </div>
 <!-- Navbar End -->
 
-<div class="container-fluid pt-5"> 
+<div class="container-fluid pt-5"style=" margin-left: 510px; background-color: #eee;;width: 500px;"> 
+    <h4 style=" margin-left: 25px;" >Cargar Productos</h4>
     <div class="row px-xl-5 pb-3">
         <form name="add-blog-post-form" id="add-blog-post-form" method="POST" action="{{route('vendedores.guardar')}}">
             <div class="form-group">
@@ -89,7 +90,7 @@
 </div>
 
 <!-- Featured Start -->
-<div class="container-fluid pt-5">
+<!-- <div class="container-fluid pt-5">
     <div class="row px-xl-5 pb-3">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
@@ -110,6 +111,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Featured End -->
 @endsection

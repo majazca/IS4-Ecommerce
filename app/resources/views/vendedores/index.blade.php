@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Inicio</a>
-                        <a href="/vendedores/1/CargarProducto" class="nav-item nav-link">Carga de Productos</a>
+                        <a href="" class="nav-item nav-link">Carga de Productos</a>
                         <a href="/vendedores/1/ListaProductos" class="nav-item nav-link">Lista de Productos</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de Ventas</a>                       
                     </div>
@@ -38,7 +38,7 @@
 <!-- Navbar End -->
 
 <!-- Featured Start -->
-<div class="container-fluid pt-5">
+<!-- <div class="container-fluid pt-5">
     <div class="row px-xl-5 pb-3">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
@@ -59,6 +59,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Featured End -->
 @endsection

@@ -52,6 +52,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Inicio</a>
+                        @auth
                         <a href="shop.html" class="nav-item nav-link">Compras</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de compras</a>
                         <!-- <div class="nav-item dropdown">
@@ -64,8 +65,10 @@
                             -->
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                    <a href="{{route('login.index')}}"class="nav-item nav-link">Iniciar sesion</a>
+                    @else
+                        <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
+                        @endauth
                     </div>
                 </div>
             </nav>

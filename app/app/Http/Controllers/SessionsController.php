@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
-
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 //controlador de login 
 
 class SessionsController extends Controller
@@ -19,8 +20,20 @@ class SessionsController extends Controller
     public function store (){
        
         Log::info('Ingresamos a SessionsController.index.');
-
-        return redirect()->to('/');
+      
+        $credentials= request()->only('email','password');
+        //dump($credentials);
+        //$remember=request()->filled('remember');
+        
+        if (Auth::attempt($credentials)){
+            request()->session()->regenerate();
+            return redirect('/');
+        }
+        throw ValidationException::withMessages([ 
+            'email' => __('auth.failed')
+        
+        ]);
+        
     }
 
     public function destroy (){

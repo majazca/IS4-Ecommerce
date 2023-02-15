@@ -34,7 +34,7 @@ Route::post("/vendedores/actualizarDatos", [VendedoresController::class, 'actual
 Route::get("/register", [RegisterController::class, 'create'])->name ('register.index');
 Route::post("/register", [RegisterController::class, 'store'])->name ('register.store');
 
-Route::get("/login", [SessionsController::class, 'create'])->name ('login.index');
+Route::get("/login", [SessionsController::class, 'create'])->name ('login.index')->middleware('guest');
 Route::post("/login", [SessionsController::class, 'store'])->name ('login.store');
 
 Route::get("/recovery", [SessionsController::class, 'recovery'])->name ('recovery.index');

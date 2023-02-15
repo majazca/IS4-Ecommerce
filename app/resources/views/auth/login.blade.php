@@ -59,6 +59,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                     <a href="/" class="nav-item nav-link active">Inicio</a>
+                    @auth
                         <a href="shop.html" class="nav-item nav-link">Compras</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de compras</a>
                         <!-- <div class="nav-item dropdown">
@@ -71,61 +72,76 @@
                             -->
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="{{route('login.index')}}"class="nav-item nav-link">Iniciar sesion</a>
+                    <a href="" class="nav-item nav-link">Salir</a>
+                        @else
+                        <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
+                        @endauth
+                       
                     </div>
                 </div>
             </nav>
             </div>
     </div>
-
+<!-- <pre> {{Auth::user()}}</pre> -->
    <!-- start formulario   -->
  <main class="login-form">
     <div class="cotainer" >
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-body">
-                        
+                    <div class="card-body" >   
                     <form name="add-blog-post-form" id="add-blog-post-form" method="POST" action="">
                             @csrf
-                            
                             <div class="form-group row">
                                 <div style=" margin: 0 auto; ">
                                    <h2>BIENVENIDO</h2>
                                 </div>
-                                
+                               
                                 <div class="col-md-12 offset-md-0" >
-                                    <input type="text" id="email" class="form-control" name="email" required autofocus  placeholder="Correo electrónico"style="margin-top: 8px;">
+                                    <input type="email" id="email" class="form-control" name="email" required autofocus value="{{old('email')}}" placeholder="Correo electrónico"style="margin-top: 8px;">
                                     
                                 </div>
                             </div>
 
                             <div class="form-group row">
-        
-                                <div class="col-md-12 offset-md-0">
-                                    <input type="password" id="password" class="form-control" name="password" required placeholder="Contraseña" style="margin-top: 8px;" >
+                             <div class="col-md-12 offset-md-0">
+                                    <input type="password" id="password" class="form-control" name="password" required placeholder="Contraseña" style="margin-top: 8px; margin-bottom: 0px;" >
                                 </div>
                             </div>
-                            <div class="col-md-4 offset-md-2">
-                                <button type="submit" class="btn btn-primary" style = "width: 250px; height: 45px; background: #D19C97; color: #ffffff;" >
+                        
+
+                            <div>
+                                @if($errors-> any())
+                                    @foreach($errors->all() as $error)
+                                    <li style = "color:#dd4e41;" >{{$error}}</li>
+                                    @endforeach
+                            </div>
+                                @endif
+                                
+                            <div class="col-md-5 offset-md-2">
+                            <!-- <label style= "margin-left: 30px;">
+                            <input type="checkbox" name="remember">
+                            Recordar mi sesión
+                          </label> -->
+                                <button type="submit" class="btn btn-primary" style = "width: 250px; height: 45px; background: #D19C97; color: #ffffff;margin-top: 10px;" >
                                     Iniciar sesión
                                 </button>
                             </div>
-                         
-                            <div class="col-md-8 offset-md-2">   
+                          
+                            <!-- <div class="col-md-8 offset-md-2">   
                             <a href="{{route('recovery.index')}}" class="btn btn-link"  style = "color:#00000094; padding-bottom: 0px; ">
                                     ¿Perdiste tu contraseña?
                                 </a>
-                            </div>
+                            </div> -->
 
-                            <div class="col-md-9 offset-md-2"> 
+                            <div class="col-md-10 offset-md-2"> 
                             <a href="{{route('register.index')}}" class="btn btn-link"style = "color:#00000094; padding-top: 0px;">
                                 ¿No tienes cuenta? Regístrate
                                 </a>
                             </div>
-                        
                         </form>
+                    
                     </div>
                 </div>
             </div>
