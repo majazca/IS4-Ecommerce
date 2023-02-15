@@ -26,7 +26,7 @@ Route::get('/productos/categorias/{id_categoria}', [ProductosController::class, 
 // Vendedores
 Route::get("/vendedores/{id}", [VendedoresController::class, 'index']);                                                    // Home Vendedores
 Route::post("/vendedores/guardar", [VendedoresController::class, 'guardar'])->name('vendedores.guardar');
-Route::get("/vendedores/{id_vendedor}/CargarProducto", [VendedoresController::class, 'cargarProducto']);              // Carga de Producto Vendedores
+Route::get("/vendedores/{id_vendedor}/cp", [VendedoresController::class, 'cargarProducto1']);              // Carga de Producto Vendedores
 Route::get("/vendedores/{id_vendedor}/ListaProductos", [VendedoresController::class, 'listaProducto']); 
 Route::get("/vendedores/{id_vendedor}/datos", [VendedoresController::class, 'datos']); 
 Route::post("/vendedores/actualizarDatos", [VendedoresController::class, 'actualizarDatos'])->name('vendedores.actualizarDatos');  

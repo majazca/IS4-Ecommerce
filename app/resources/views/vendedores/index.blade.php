@@ -23,7 +23,7 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Inicio</a>
-                        <a href="" class="nav-item nav-link">Carga de Productos</a>
+                        <a href="/vendedores/1/CargarProducto" class="nav-item nav-link">Carga de Productos</a>
                         <a href="/vendedores/1/ListaProductos" class="nav-item nav-link">Lista de Productos</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de Ventas</a>                       
                     </div>

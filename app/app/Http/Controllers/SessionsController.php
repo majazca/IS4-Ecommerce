@@ -26,8 +26,18 @@ class SessionsController extends Controller
         //$remember=request()->filled('remember');
         
         if (Auth::attempt($credentials)){
-            request()->session()->regenerate();
+           request()->session()->regenerate();
+           
+           $usuario = User::where('email', $credentials['email'])->first();
+           $rol = $usuario->rol;
+           
+          if ($rol == 'cliente' ) {
             return redirect('/');
+          }
+          else {
+            return redirect('/vendedores/'.$usuario->id);
+          }
+            
         }
         throw ValidationException::withMessages([ 
             'email' => __('auth.failed')
