@@ -22,7 +22,8 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="/" class="nav-item nav-link active">Inicio</a>
-                        <a href="{{route('cargarProducto')}}" class="nav-item nav-link">Cargar Productos</a>
+                        <a href="/vendedores/{{$vendedor[0]['id']}}/CargarProducto" class="nav-item nav-link">Cargar Productos</a> 
+                        <a href="/vendedores/{{$vendedor[0]['id']}}/ListaProductos" class="nav-item nav-link">Lista de Productos</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de ventas</a>
                         <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
@@ -51,7 +52,7 @@
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" required="">
             </div>            
-            <input type="hidden" id="id_vendedor" name="id_vendedor" class="form-control" required="" value="{{$vendedor[0]['id_vendedor']}}">
+            <input type="hidden" id="id_vendedor" name="id_vendedor" class="form-control" required="" value="{{$vendedor[0]['id']}}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
             <div class="form-group">
                 <label for="id_categoria">Categoria:</label>

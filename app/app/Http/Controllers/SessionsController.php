@@ -14,7 +14,8 @@ class SessionsController extends Controller
 {
     //
     public function create (){
-        return view ('auth.login');
+        $categorias =  (new HomeController)->obtenerCategorias();
+        return view ('auth.login',["categorias"=>$categorias]);
     }
 
     public function store (){

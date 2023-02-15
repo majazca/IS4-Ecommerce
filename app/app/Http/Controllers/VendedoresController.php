@@ -42,13 +42,16 @@ class VendedoresController extends Controller
         // Log::debug('Ingresamos a ProductosController.cargarProducto. id_vendedor:', $id_vendedor); //TODO
 
         // TODO
-        $rol = config('global.roles.admin');
+        //$rol = config('global.roles.admin');
         $categorias =  (new HomeController)->obtenerCategorias();
-        $vendedor = Venderore::where('id_vendedor', $id_vendedor)->get();
-
-
+        //$vendedor = Venderore::where('id_vendedor', 1)->get();
+        $vendedor = User::where('id', $id_vendedor)->get();
+       // $vendedor[0]['nombre'] = $vendedor;
+        
         Log::info('Salimos de ProductosController.cargarProducto.');
-        return view("vendedores.cargarProducto", compact('rol', 'vendedor','categorias'));
+        /* Log::info($vendedor1); */
+        //return view("vendedores.index", compact('rol', 'vendedor'));
+        return view("vendedores.cargarProducto", compact('vendedor','categorias'));
     }
 
     /**
@@ -59,12 +62,12 @@ class VendedoresController extends Controller
         Log::info('Ingresamos a VendedorController.listaProducto. Vamos a obtener los productos para el vendedor con id: '.$id_vendedor);
 
         // // TODO
-        $rol = config('global.roles.admin');
+        //$rol = config('global.roles.admin');
         $productos = Producto::where('id_vendedor', $id_vendedor)->get();
-        $vendedor = Venderore::where('id_vendedor', $id_vendedor)->get();
+        $vendedor = User::where('id', $id_vendedor)->get();
 
         Log::info('Salimos de VendedorController.listaProducto.');
-        return view("vendedores.listaProductos", compact('productos', 'rol', 'vendedor'));
+        return view("vendedores.listaProductos", compact('productos', 'vendedor'));
     }
 
     public function datos($id_vendedor)
@@ -111,15 +114,14 @@ class VendedoresController extends Controller
         Log::info('Ingresamos a ProductosController.guardar.');
 
         $nombre = request('nombre');
-        $id_vendedor = 1;
+        $id_vendedor = request('id_vendedor');
         $id_categoria = request('id_categoria');
         $descripcion = request('descripcion');
         $precio = request('precio');
         $iva = request('iva');
         $imagen = request('imagen');  
         $cantidad = request('cantidad'); 
-        $id_vendedor = request('id_vendedor');        
-
+     
         $data=array('nombre'=>$nombre,"id_categoria"=>$id_categoria,"descripcion"=>$descripcion,"precio"=>$precio,"iva"=>$iva,"imagen"=>$imagen, "cantidad"=>$cantidad,"id_vendedor"=>$id_vendedor);
         DB::table('productos')->insert($data);   
 

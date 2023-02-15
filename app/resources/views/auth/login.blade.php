@@ -34,16 +34,17 @@
             </a>
             <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
                 <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                    <div class="nav-item dropdown">
-                          
-                                <a href="/productos/categorias/1" class="dropdown-item">Artesanias</a>
-                                <a href="/productos/categorias/2" class="dropdown-item">Ropa</a>
-                                <a href="/productos/categorias/3" class="dropdown-item">Juguetes</a>
-                            
-                    </div> 
-                      @include('clima')
+                    
+                <div class="navbar-nav w-100 overflow-hidden" stylebuscar="height: 410px">
+                    @if(count($categorias)>0)
+                    @foreach($categorias as $cat)
+                    <a href="/productos/categorias/{{ $cat->id_categoria}}" class="nav-item nav-link">{{ $cat->descripcion}}</a>
+                    @endforeach
+                    @endif
+                </div>       
+                @include('clima')
                 </div>
-              
+       
             </nav>
         </div>
 

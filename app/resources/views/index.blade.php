@@ -49,7 +49,7 @@
 
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Salir</a>
+                        <a href="{{route('logout.destroy')}}" class="nav-item nav-link">Salir</a>
                         @else
                         <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
