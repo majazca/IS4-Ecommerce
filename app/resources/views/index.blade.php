@@ -39,6 +39,7 @@
                         @auth
                         <a href="shop.html" class="nav-item nav-link">Compras</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de compras</a>
+                       
                         <form action="/logout" method="POST">
                             @csrf
                             <a href="#" 
