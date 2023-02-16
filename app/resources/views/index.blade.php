@@ -39,6 +39,13 @@
                         @auth
                         <a href="shop.html" class="nav-item nav-link">Compras</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de compras</a>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <a href="#" 
+                            onclick="this.closest('form').submit()">
+                        
+                        Salir</a>
+                        </form> 
                         <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
                             <div class="dropdown-menu rounded-0 m-0">
@@ -49,12 +56,12 @@
 
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                    
-                       
                         @else
                         <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
+                    
                         @endauth
+                        
                     </div>
                 </div>
             </nav>
