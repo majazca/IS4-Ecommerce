@@ -29,10 +29,16 @@
                         <a href="/" class="nav-item nav-link active">Inicio</a>
                         <a href="/vendedores/{{$vendedor[0]['id']}}/CargarProducto" class="nav-item nav-link">Carga de Productos</a>
                         <a href="/vendedores/{{$vendedor[0]['id']}}/ListaProductos" class="nav-item nav-link">Lista de Productos</a>
-                        <a href="detail.html" class="nav-item nav-link">Detalles de Ventas</a>                       
+                                   
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Salir</a>
+                    <form action="/logout" method="POST">
+                            @csrf
+                            <a href="#" 
+                            onclick="this.closest('form').submit()">
+                        
+                        Salir</a>
+                        </form>
                     </div>
                 </div>
             </nav>            
@@ -75,13 +81,5 @@
         </div>
     </div>
 
-    <div>
-        <p><a href="route{{productos.user}}"> Exportar datos 
-            FORMATO EXCEL
-        </a>
-
-        </p>
-
-    </div>
-
+  
 @endsection

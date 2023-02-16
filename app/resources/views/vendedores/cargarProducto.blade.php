@@ -24,7 +24,7 @@
                         <a href="/" class="nav-item nav-link active">Inicio</a>
                         <a href="/vendedores/{{$vendedor[0]['id']}}/CargarProducto" class="nav-item nav-link">Cargar Productos</a> 
                         <a href="/vendedores/{{$vendedor[0]['id']}}/ListaProductos" class="nav-item nav-link">Lista de Productos</a>
-                        <a href="detail.html" class="nav-item nav-link">Detalles de ventas</a>
+                     
                         <!-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"></a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -35,7 +35,13 @@
                             -->
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Salir</a>
+                    <form action="/logout" method="POST">
+                            @csrf
+                            <a href="#" 
+                            onclick="this.closest('form').submit()">
+                        
+                        Salir</a>
+                        </form>
                     </div>
                 </div>
             </nav>            

@@ -243,5 +243,5 @@
         </div>
     </div>
     <!-- Vendor End -->
-
+   
     @endsection

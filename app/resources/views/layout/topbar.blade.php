@@ -41,7 +41,7 @@
  <!-- Topbar End -->
 
 
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
      $(document).ready(function() {
 
          $('#buscar').on('click', function(e) {
@@ -87,4 +87,4 @@
             $('#productosModal').modal('hide');
         });
      });
- </script>
+ </script> -->

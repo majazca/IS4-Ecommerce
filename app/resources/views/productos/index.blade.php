@@ -9,11 +9,14 @@
   color: #000000 ;
   background-color: #fefefe;
   border-color: #6073b7;
+  margin-top: 2px;
 }
  .btn-outline-secondary {
  color:#000000 ;
   border-color: #161719b3;
+  margin-top: 2px;
 }
+
 
 
     
@@ -64,6 +67,14 @@
 
                     </div>
                     <div class="navbar-nav ml-auto py-0">
+                    <form action="/logout" method="POST">
+                            @csrf
+                            <a href="#" 
+                            onclick="this.closest('form').submit()">
+                        
+                        Salir</a>
+                        </form>   
+
                     @else
                         <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
@@ -129,8 +140,11 @@
 
   <div class="card-body">
 
-    <p class="card-text"><?php echo $prd->nombre; ?></p>
-
+    <h3 class="card-text"><?php echo $prd->nombre; ?></h3>
+    <div class="descripcion" style= "background-color: #eecdca">
+        <p style="margin-bottom: 0px;border-color:#6073b7;">Descripción</p>
+    <p class="card-text"><?php echo $prd->descripcion; ?></p></div>
+    
     <div class="d-flex justify-content-between align-items-center">
 
       <div class="btn-group">
@@ -150,8 +164,10 @@
         <input name="titulo" type="hidden" id="titulo<?php echo $prd->id_producto; ?>" value="<?php echo $prd->nombre; ?>" />
 
         <input name="cantidad" type="hidden" id="cantidad<?php echo $prd->id_producto; ?>" value="1" class="pl-2" />
+        
+       
 
-      </div>
+    </div>
 
       <small class="text-muted"><?php echo $prd->precio; ?>Gs</small>
 
