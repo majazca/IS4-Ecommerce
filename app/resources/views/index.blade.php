@@ -40,7 +40,10 @@
                         <a href="shop.html" class="nav-item nav-link">Compras</a>
                         <a href="detail.html" class="nav-item nav-link">Detalles de compras</a>
                        
-                        <form action="/logout" method="POST">
+                        <form action="/logout" method="POST"style="
+    margin-top: 20px;
+    margin-left: 650px;
+">
                             @csrf
                             <a href="#" 
                             onclick="this.closest('form').submit()">
