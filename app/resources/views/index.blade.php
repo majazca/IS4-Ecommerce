@@ -50,14 +50,7 @@
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                     
-                        <form action="/logout" method="POST">
-                            
-                            <a href="" 
-                            onclick="this.closest('form').submit()">
-                        
-                            Salir</a>
-                        </form>
-                   
+                       
                         @else
                         <a href="{{route('login.index')}}" class="nav-item nav-link" style="margin-left: 730px;">Iniciar sesion</a>
                         <a href="{{route('register.index')}}" class="nav-item nav-link">Registrarse</a>
